@@ -15,4 +15,4 @@
       bigiq_device_info:
         provider: "{{ provider }}"
         gather_subset:
-          - ltm-pools
+          - system-info
