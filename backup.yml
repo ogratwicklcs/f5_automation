@@ -12,7 +12,7 @@
 
   tasks:
     - name: getting facts
-      bigiq_device_info:
+      f5networks.f5_modules.bigiq_device_info:
         provider: "{{ provider }}"
         gather_subset:
-          - interfaces
+          - vlans
