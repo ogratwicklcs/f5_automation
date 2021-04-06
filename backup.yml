@@ -1,0 +1,15 @@
+---
+- name: get facts
+  hosts: all
+  connection: local
+  gather_facts: no
+  collections:
+    - f5networks.f5_modules
+  vars:
+    provider:
+      server: "{{ ansible_host }}"
+      validate_certs: False
+
+  tasks:
+    - name: getting facts
+      bigiq_device_info:
