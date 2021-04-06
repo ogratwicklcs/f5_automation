@@ -3,6 +3,6 @@
 #  - name: f5networks.f5_modules
 #    source: https://cloud.redhat.com/api/automation-hub/
  #   version: 1.8.0
-collections:
-- name: redhat.satellite
-  source: https://cloud.redhat.com/api/automation-hub/
+#collections:
+#- name: redhat.satellite
+ # source: https://cloud.redhat.com/api/automation-hub/
