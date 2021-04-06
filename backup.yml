@@ -13,5 +13,6 @@
   tasks:
     - name: getting facts
       bigiq_device_info:
+        provider: "{{ provider }}"
         gather_subset:
           - all
