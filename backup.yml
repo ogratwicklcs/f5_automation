@@ -13,3 +13,5 @@
   tasks:
     - name: getting facts
       bigiq_device_info:
+        gather_subset:
+          - all
