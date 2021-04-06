@@ -7,7 +7,7 @@
     - f5networks.f5_modules
   vars:
     provider:
-      server: "{{ ansible_host }}"
+      server: "{{ inventory_hostname }}"
       validate_certs: False
 
   tasks:
