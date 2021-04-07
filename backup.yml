@@ -7,12 +7,14 @@
     - f5networks.f5_modules
   vars:
     provider:
-      server: "{{ inventory_hostname }}"
+      server: "{{ ansible_host }}"
       validate_certs: False
 
   tasks:
     - name: getting facts
       f5networks.f5_modules.bigiq_device_info:
-        provider: "{{ provider }}"
+        provider: 
+          server: "{{ ansible_host}}"
+          validate_certs: False
         gather_subset:
           - all
