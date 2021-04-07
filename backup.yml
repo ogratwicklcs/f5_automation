@@ -12,7 +12,7 @@
 
   tasks:
     - name: getting facts
-      f5networks.f5_modules.bigiq_device_info:
+      f5networks.f5_modules.bigip_device_info:
         provider: "{{ provider }}"
          # user: '{{ lookup("env", "ANSIBLE_NET_USERNAME") }}'
          # password: '{{ lookup("env", "ANSIBLE_NET_PASSWORD") }}'
