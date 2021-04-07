@@ -37,6 +37,6 @@
           validate_certs: False
         #content: "{{ lookup('file', '/ucs/ca-bundle-test.crt') }}"
         state: absent
-        name: test
+        name: '/Common/test'
         issuer_cert: Self
 
