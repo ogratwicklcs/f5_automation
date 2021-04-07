@@ -24,10 +24,10 @@
         dest: /ucs/backups/{{ ansible_host }}-cs_backup.ucs
 
     - name: upload certs
-      f5networks.f5_modules.bigip_ssl_certificate:
+      f5networks.f5_modules.bigip_ssl_key_cert:
         provider:
           server: 100.64.47.181
           validate_certs: False
         #content: "{{ lookup('file', '/ucs/ca-bundle-test.crt') }}"
         state: absent
-        name: test
+        cert_name: test
