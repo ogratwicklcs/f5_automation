@@ -15,4 +15,4 @@
       f5networks.f5_modules.bigiq_device_info:
         provider: "{{ provider }}"
         gather_subset:
-          - vlans
+          - all
