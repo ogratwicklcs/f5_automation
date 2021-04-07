@@ -7,7 +7,7 @@
     - f5networks.f5_modules
   vars:
    provider:
-     server: "{{ ansible_host }}"
+     server: "{{ private_ip }}"
      validate_certs: False
 
   tasks:
