@@ -24,7 +24,7 @@
         dest: /ucs/backups/{{ ansible_host }}-cs_backup.ucs
 
     - name: upload certs
-      f5networks.f5_modules.bigip_ssl_key_cert:
+      f5networks.f5_modules.bigip_ssl_certificate:
         provider:
           server: 100.64.47.181
           validate_certs: False
