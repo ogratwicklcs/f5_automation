@@ -15,7 +15,7 @@
       f5networks.f5_modules.bigip_device_info:
         provider: "{{ provider }}"
         gather_subset:
-          - system-info
+          - ssl-certs
 
     - name: backup ucs
       f5networks.f5_modules.bigip_ucs_fetch:
