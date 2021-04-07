@@ -30,4 +30,4 @@
           validate_certs: False
         #content: "{{ lookup('file', '/ucs/ca-bundle-test.crt') }}"
         state: absent
-        cert_name: test
+        cert_name: FNMT-RCM
