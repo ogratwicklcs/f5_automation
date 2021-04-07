@@ -19,5 +19,6 @@
 
     - name: backup ucs
       f5networks.f5_modules.bigip_ucs_fetch:
+        provider: "{{ provider }}"
         src: cs_backup.ucs
         dest: /ucs/backups/{{ ansible_host }}-cs_backup.ucs
