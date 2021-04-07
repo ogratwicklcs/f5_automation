@@ -5,10 +5,10 @@
   gather_facts: no
   collections:
     - f5networks.f5_modules
-  vars:
-    provider:
-      server: "{{ ansible_host }}"
-      validate_certs: False
+  #vars:
+ #   provider:
+  #    server: "{{ ansible_host }}"
+  #    validate_certs: False
 
   tasks:
     - name: getting facts
@@ -17,5 +17,7 @@
           server: "{{ ansible_host}}"
           validate_certs: False
           server_port: 8443
+          user: "{{ ansible_user }}"
+          password: "{{ ansible_password }}"
         gather_subset:
           - all
