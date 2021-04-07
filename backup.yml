@@ -38,4 +38,5 @@
         #content: "{{ lookup('file', '/ucs/ca-bundle-test.crt') }}"
         state: absent
         name: test
+        issuer: Self
 
