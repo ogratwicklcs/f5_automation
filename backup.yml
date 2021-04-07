@@ -23,12 +23,13 @@
         src: cs_backup.ucs
         dest: /ucs/backups/{{ ansible_host }}-cs_backup.ucs
 
-- name: get facts
+- name: delete certs
   hosts: all
   connection: local
   gather_facts: no
   collections:
     - f5networks.f5_modules
+  tasks:
     - name: upload certs
       f5networks.f5_modules.bigip_ssl_certificate:
         provider:
