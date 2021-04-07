@@ -1,39 +1,36 @@
-# ---
-# - name: get facts
-#   hosts: all
-#   connection: local
-#   gather_facts: no
-#   collections:
-#     - f5networks.f5_modules
-#   #vars:
-#  #   provider:
-#   #    server: "{{ ansible_host }}"
-#   #    validate_certs: False
-
-#   tasks:
-#     - name: getting facts
-#       f5networks.f5_modules.bigiq_device_info:
-#         provider: 
-#           server: "{{ ansible_host}}"
-#           validate_certs: False
-#           server_port: 8443
-#           user: '{{ lookup("env", "ANSIBLE_NET_USERNAME") }}'
-#           password: '{{ lookup("env", "ANSIBLE_NET_PASSWORD") }}'
-#         gather_subset:
-#           - all
 ---
-- name: GRAB F5 FACTS
+- name: get facts
   hosts: all
   connection: local
-  gather_facts: false
+  gather_facts: no
+  collections:
+    - f5networks.f5_modules
+  vars:
+   provider:
+     server: "{{ ansible_host }}"
+     validate_certs: False
+
   tasks:
-    - name: COLLECT BIG-IP FACTS
-      bigip_device_info:
+    - name: getting facts
+      f5networks.f5_modules.bigiq_device_info:
+        provider: "{{ provider }}"
+         # user: '{{ lookup("env", "ANSIBLE_NET_USERNAME") }}'
+         # password: '{{ lookup("env", "ANSIBLE_NET_PASSWORD") }}'
         gather_subset:
-          - system-info
-        provider:
-          server: "{{private_ip}}"
-          user: "{{ansible_user}}"
-          password: "{{ansible_password}}"
-          server_port: 443
-          validate_certs: false
+          - all
+# ---
+# - name: GRAB F5 FACTS
+#   hosts: all
+#   connection: local
+#   gather_facts: false
+#   tasks:
+#     - name: COLLECT BIG-IP FACTS
+#       bigip_device_info:
+#         gather_subset:
+#           - system-info
+#         provider:
+#           server: "{{private_ip}}"
+#           user: "{{ansible_user}}"
+#           password: "{{ansible_password}}"
+#           server_port: 443
+#           validate_certs: false
