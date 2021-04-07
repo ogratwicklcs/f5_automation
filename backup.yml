@@ -29,3 +29,5 @@
           server: 100.64.47.181
           validate_certs: False
         content: "{{ lookup('file', '/ucs/ca-bundle-test.crt') }}"
+        state: present
+        name: test-cert
