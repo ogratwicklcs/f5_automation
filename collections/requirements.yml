@@ -1,5 +1,5 @@
 collections: 
   - name: f5networks.f5_modules
     source: https://cloud.redhat.com/api/automation-hub/
-    version: latest
+    version: 1.9.0
       
