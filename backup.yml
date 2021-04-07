@@ -7,30 +7,13 @@
     - f5networks.f5_modules
   vars:
    provider:
-     server: "{{ private_ip }}"
+     server: "{{ ansible_host }}"
      validate_certs: False
 
   tasks:
     - name: getting facts
       f5networks.f5_modules.bigip_device_info:
         provider: "{{ provider }}"
-         # user: '{{ lookup("env", "ANSIBLE_NET_USERNAME") }}'
-         # password: '{{ lookup("env", "ANSIBLE_NET_PASSWORD") }}'
         gather_subset:
           - system-info
-# ---
-# - name: GRAB F5 FACTS
-#   hosts: all
-#   connection: local
-#   gather_facts: false
-#   tasks:
-#     - name: COLLECT BIG-IP FACTS
-#       bigip_device_info:
-#         gather_subset:
-#           - system-info
-#         provider:
-#           server: "{{private_ip}}"
-#           user: "{{ansible_user}}"
-#           password: "{{ansible_password}}"
-#           server_port: 443
-#           validate_certs: false
+
