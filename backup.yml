@@ -34,8 +34,8 @@
     - name: upload certs
       f5networks.f5_modules.bigip_ssl_certificate:
         provider: "{{ provider }}"
-        #content: "{{ lookup('file', '/ucs/ca-bundle-test.crt') }}"
-        state: absent
+        content: "{{ lookup('file', '/ucs/ca-bundle-test.crt') }}"
+        state: present
         name: f5-irule
-        issuer_cert: Self
+        #issuer_cert: Self
 
