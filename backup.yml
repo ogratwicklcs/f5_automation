@@ -9,7 +9,7 @@
    provider:
      server: "{{ ansible_host }}"
      validate_certs: False
-     server_port: 8443
+
 
   tasks:
     - name: getting facts
