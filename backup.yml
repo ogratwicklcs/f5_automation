@@ -17,23 +17,23 @@
         gather_subset:
           - ssl-certs
 
-    - name: backup ucs
-      f5networks.f5_modules.bigip_ucs_fetch:
-        provider: "{{ provider }}"
-        src: cs_backup.ucs
-        dest: /ucs/backups/{{ ansible_host }}-cs_backup.ucs
+#     - name: backup ucs
+#       f5networks.f5_modules.bigip_ucs_fetch:
+#         provider: "{{ provider }}"
+#         src: cs_backup.ucs
+#         dest: /ucs/backups/{{ ansible_host }}-cs_backup.ucs
 
-- name: delete certs
-  hosts: all
-  connection: local
-  gather_facts: no
-  collections:
-    - f5networks.f5_modules
-  tasks:
+# - name: delete certs
+#   hosts: all
+#   connection: local
+#   gather_facts: no
+#   collections:
+#     - f5networks.f5_modules
+#   tasks:
     - name: upload certs
       f5networks.f5_modules.bigip_ssl_certificate:
         provider:
-          server: 100.64.47.181
+          server: "{{ ansible_host }}"
           validate_certs: False
         #content: "{{ lookup('file', '/ucs/ca-bundle-test.crt') }}"
         state: absent
