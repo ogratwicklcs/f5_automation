@@ -36,6 +36,6 @@
         provider: "{{ provider }}"
         #content: "{{ lookup('file', '/ucs/ca-bundle-test.crt') }}"
         state: absent
-        name: ca-bundle
+        name: f5-irule
         issuer_cert: Self
 
